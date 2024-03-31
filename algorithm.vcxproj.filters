@@ -26,5 +26,32 @@
     <ClInclude Include="baekjoon\boj-1926.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="baekjoon\boj-2623.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="programmers\pick-item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-11568.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\knights_fight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-9095.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-2579.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-11726.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-11659.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-12852.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

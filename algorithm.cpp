@@ -1,11 +1,8 @@
-#include "baekjoon/boj-2623.h"
+#include "baekjoon/boj-12852.h"
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
-    solve_2623();
+    solve();
     
     return 0;
 }

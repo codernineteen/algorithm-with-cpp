@@ -1,7 +1,7 @@
 #pragma once
 
 #include "types.h"
-
+ 
 using namespace std;
 
 int solve() {
@@ -24,5 +24,26 @@ int solve() {
 	}
 
 	cout << max(dp[N][1], dp[N][2]) << "\n";
+	return 0;
+}
+
+int solve2() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int N;
+	cin >> N;
+
+	int score[301] = {0,};
+	for (int i = 1; i <= N; i++) cin >> score[i];
+
+	int dp[301] = { 0, };
+	dp[0] = 0;
+	dp[1] = 0;
+	dp[2] = 0;
+	for (int i = 3; i <= N; i++) {
+		dp[i] = min(dp[i - 2], dp[i - 3]);
+	}
+
 	return 0;
 }

@@ -132,6 +132,7 @@
     <ClCompile Include="algorithm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="baekjoon\boj-11047.h" />
     <ClInclude Include="baekjoon\boj-11659.h" />
     <ClInclude Include="baekjoon\boj-11568.h" />
     <ClInclude Include="baekjoon\boj-1158.h" />

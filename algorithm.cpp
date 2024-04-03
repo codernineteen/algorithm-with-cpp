@@ -1,4 +1,4 @@
-#include "baekjoon/boj-12852.h"
+#include "baekjoon/boj-11047.h"
 
 int main()
 {

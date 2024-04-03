@@ -16,30 +16,27 @@
 - 1926번 그림
 	- [문제](https://www.acmicpc.net/problem/1926)
 	- [풀이](./baekjoon/boj-1926.h)
-- 1463번 
+- 1463번 1로 만들기
 	- [문제](https://www.acmicpc.net/problem/1463)
 	- [풀이](./baekjoon/boj-1463.h)
-- 2579번 그림
+- 2579번 계단 오르기
 	- [문제](https://www.acmicpc.net/problem/2579)
 	- [풀이](./baekjoon/boj-2579.h)
-- 2623번 그림
-	- [문제](https://www.acmicpc.net/problem/2623)
-	- [풀이](./baekjoon/boj-2623.h)
-- 9095번 그림
+- 9095번 1,2,3 더하기
 	- [문제](https://www.acmicpc.net/problem/9095)
 	- [풀이](./baekjoon/boj-9095.h)
-- 11568번 그림
-	- [문제](https://www.acmicpc.net/problem/11568)
-	- [풀이](./baekjoon/boj-11568.h)
-- 11659번 그림
+- 11659번 구간 합 구하기 4
 	- [문제](https://www.acmicpc.net/problem/11659)
 	- [풀이](./baekjoon/boj-11659.h)
-- 11726번 그림
+- 11726번 2xn 타일링
 	- [문제](https://www.acmicpc.net/problem/11726)
 	- [풀이](./baekjoon/boj-11726.h)
-- 12852번 그림
+- 12852번 1로 만들기 2
 	- [문제](https://www.acmicpc.net/problem/12852)
 	- [풀이](./baekjoon/boj-12852.h)
+- 11047 동전0
+	- [문제](https://www.acmicpc.net/problem/11047)
+	- [풀이](./baekjoon/boj-11047.h)
 	
 ### Gold
 

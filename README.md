@@ -37,6 +37,9 @@
 - 11047 동전0
 	- [문제](https://www.acmicpc.net/problem/11047)
 	- [풀이](./baekjoon/boj-11047.h)
+- 1931 회의실 배정
+	- [문제](https://www.acmicpc.net/problem/1931)
+	- [풀이](./baekjoon/boj-1931.h)
 	
 ### Gold
 

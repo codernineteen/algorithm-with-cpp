@@ -43,4 +43,8 @@
 	
 ### Gold
 
-## Leetcode
+## Samsung SW Test
+
+- 포탑부수기
+	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/destroy-the-turret)
+	- [풀이](./samgsung-sw/potop.h)

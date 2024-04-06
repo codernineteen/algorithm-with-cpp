@@ -145,6 +145,7 @@
     <ClInclude Include="baekjoon\boj-9095.h" />
     <ClInclude Include="programmers\pick-item.h" />
     <ClInclude Include="samsung-sw\knights_fight.h" />
+    <ClInclude Include="samsung-sw\potop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

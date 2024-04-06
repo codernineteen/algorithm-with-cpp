@@ -1,4 +1,4 @@
-#include "baekjoon/boj-11047.h"
+#include "samsung-sw/potop.h"
 
 int main()
 {

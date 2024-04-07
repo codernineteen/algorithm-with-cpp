@@ -62,5 +62,8 @@
     <ClInclude Include="samsung-sw\potop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="samsung-sw\bbang.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

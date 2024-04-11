@@ -132,8 +132,6 @@ int solve() {
         bfs();
         // 3. 회전
         rotateDir();
-        // 4. 다시 굴리기
-        roll();
     }
 
     cout << score << "\n";

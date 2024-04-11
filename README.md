@@ -47,22 +47,22 @@
 
 - 포탑부수기
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/destroy-the-turret)
-	- [풀이](./samgsung-sw/potop.h)
+	- [풀이](./samsung-sw/potop.h)
 - 루돌프의 반란
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/rudolph-rebellion/description?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/rudol.h)
+	- [풀이](./samsung-sw/rudol.h)
 - 싸움땅
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/battle-ground/description?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/fight_island_.h)
+	- [풀이](./samsung-sw/fight_island_.h)
 - 꼬리잡기 놀이
 	- [문제](https://codetree.ai/training-field/frequent-problems/problems/tail-catch-play?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/grab-tail.h)
+	- [풀이](./samsung-sw/grab-tail.h)
 - 포탑부수기
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/destroy-the-turret/description?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/potop.h)
+	- [풀이](./samsung-sw/potop.h)
 - 술래잡기
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/hide-and-seek/description?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/soolae.h)
+	- [풀이](./samsung-sw/soolae.h)
 - 주사위 굴리기
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/cube-rounding-again/description?page=1&pageSize=20)
-	- [풀이](./samgsung-sw/dice-roll.h)
+	- [풀이](./samsung-sw/dice-roll.h)

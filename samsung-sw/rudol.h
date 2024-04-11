@@ -1,5 +1,4 @@
 #include "types.h"
-
 #define row first
 #define col second
 
@@ -96,9 +95,9 @@ int findSanta() {
 void crash(int sid, int power, vector<int>& dir, bool hitted) {
     int curR = sPos[sid].row;
     int curC = sPos[sid].col;
- 
+
     int nr = curR + dir[0] * power;
-	int nc = curC + dir[1] * power;
+    int nc = curC + dir[1] * power;
 
     // 일단 날라가
     board[curR][curC] = 0;
@@ -162,16 +161,16 @@ void protest() {
     pair<int, int> next = { rPos.row, rPos.col };
     int dist = INT_MAX;
 
-    for(auto& dir : rdirs) {
-		int nr = rPos.row + dir[0];
-		int nc = rPos.col + dir[1];
+    for (auto& dir : rdirs) {
+        int nr = rPos.row + dir[0];
+        int nc = rPos.col + dir[1];
         int cDist = getDist(nr, nc, sPos[tid].row, sPos[tid].col);
-		if (isOut(nr, nc)) continue;
-		if (cDist < dist) {
-			next = { nr, nc };
+        if (isOut(nr, nc)) continue;
+        if (cDist < dist) {
+            next = { nr, nc };
             dist = cDist;
-		}
-	}
+        }
+    }
 
 
     if (board[next.row][next.col] > 0) {

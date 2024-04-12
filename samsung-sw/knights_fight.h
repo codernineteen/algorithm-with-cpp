@@ -1,183 +1,186 @@
-#include <vector>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <set>
 #include <iostream>
+#include <vector>
+#include <queue>
+#include <map>
+#include <array>
+
+#define R first
+#define C second
 
 using namespace std;
 
+/*
+L x L 체스판, 상단 (1,1)
+칸 구성 : 빈칸 | 함정 | 벽 (체스판 밖도 벽으로 간주)
+기사 : (r,c) / 높이 x 너비의 직사각형 형태 / k 체력
+
+1. 기사 이동 (상하좌우)
+- 이동하려는 위치에 다른 기사가 있다면, 그 기사도 함께 연쇄적으로 밀림.
+- 연쇄 반응 끝에 기사가 이동하려는 방향에 벽이 있으면 모든 기사는 이동 불가
+- 이미 사라진 기사는 스킵
+
+2. 대결 대미지
+- 다른 기사를 밀치면 기사는 피해를 입음
+    피해 : 기사가 이동한 위치의 '자신의 방패 내에 놓여있는 함정 수만큼 피해'
+- 피해를 입으면 체력이 깎이고, '현재 체력 이상의 대미지'를 받는 다면 사망
+- !! 명령을 받은 기사는 이동해도 피해를 입지 않음.
+- 모든 기사의 이동이 끝난 후 피해를 입는다.
+*/
+
+// 0 - 빈칸, 1 - 함정, 2 - 벽
 int board[41][41] = { {0,} };
-int dirs[4][2] = {
-    {-1,0}, {0,1}, {1,0}, {0, -1}
-};
+int dirs[4][2] = { {-1,0}, {0,1}, {1,0}, {0, -1} };
+int L, N, Q; // N - 기사, Q - 명령
 
-bool inRange(int nr, int nc, int L) {
-    if (nr < 1 || nr > L || nc < 1 || nc > L) return false;
-    return true;
+pair<int, int> pos[31];
+int health[31] = { 0, };
+int width[31] = { 0, };
+int height[31] = { 0, };
+int orig[31] = { 0, };
+
+bool isOut(int nr, int nc) {
+    if (nr > L || nc > L || nr < 1 || nc < 1 || board[nr][nc] == 2) return true;
+    return false;
 }
 
-int canMove(vector<pair<int, int>>& coords, int dir, int L, int idx) {
-    bool interact = false;
-    for (const auto& coord : coords) {
-        int nr = coord.first + dirs[dir][0];
-        int nc = coord.second + dirs[dir][1];
-        if (!inRange(nr, nc, L)) return 0; // 장외인 경우 stop
-        if (board[nr][nc] == 2) return 0; //  벽인 경우 stop
-        if (board[nr][nc] > 1) {
-            int next = board[nr][nc];
-            if (next % 2 != 0) next -= 1;
-            if (next - idx != 0) interact = true;
+vector<pair<int, int>> getSearchRange(int idx, int dir) {
+    int r = pos[idx].R;
+    int c = pos[idx].C;
+    int w = width[idx];
+    int h = height[idx];
+
+    vector<pair<int, int>> search;
+
+    if (dir == 0) { // 상
+        r -= 1;
+        for (int i = c; i <= c + w - 1; i++) {
+            search.push_back({ r, i });
         }
     }
-    return interact == true ? 2 : 1;
+    else if (dir == 1) { // 우
+        c += w;
+        for (int i = r; i <= r + h - 1; i++) {
+            search.push_back({ i, c });
+        }
+    }
+    else if (dir == 2) { // 하
+        r += h;
+        for (int i = c; i <= c + w - 1; i++) {
+            search.push_back({ r, i });
+        }
+    }
+    else { // 좌
+        c -= 1;
+        for (int i = r; i <= r + h - 1; i++) {
+            search.push_back({ i, c });
+        }
+    }
+
+    return search;
 }
 
-void computeDamage(pair<int, vector<pair<int, int>>>& knight, int knightNum) {
-    for (const auto& coord : knight.second) {
-        if ((board[coord.first][coord.second] - knightNum) == 1) {
-            knight.first--;
-        }
-    }
-    // 체력이 0보다 작아지면 사라짐
-    if(knight.first <= 0) {
-		for (const auto& coord : knight.second) {
-			board[coord.first][coord.second] -= knightNum;
-		}
-    }
-}
+vector<int> move(int idx, int dir) {
+    bool needMove[31] = { 0, };
+    needMove[idx] = true;
 
-bool chainReaction(
-    vector<pair<int, vector<pair<int, int>>>>& knights,
-    vector<pair<int, int>>& coords,
-    unordered_map<int, int>& reverseKey,
-    int dir,
-    int L,
-    int idx,
-    int depth = 0
-) {
-    int movable = canMove(coords, dir, L, idx);
-    if (!movable) return false;
+    vector<int> hitted;
+    queue<int> knights;
+    knights.push(idx); // 나로 시작~
 
-    else {
-        if (movable == 1) { // 연쇄 반응이 없을 때
-            // 기사 위치 업데이트
-            for (auto& coord : coords) {
-                int nr = coord.first + dirs[dir][0];
-                int nc = coord.second + dirs[dir][1];
-                board[coord.first][coord.second] -= idx; // 덧칠만 지워줌
-                board[nr][nc] += idx; // 덧칠
-                coord.first = nr;
-                coord.second = nc;
-            }
-            if(depth > 0)
-                computeDamage(knights[reverseKey[idx]], idx);
-        }
-        else { // 연쇄 반응이 있을 때
-            unordered_set<int> nexts;
-            for (auto& coord : coords) {
-                int nr = coord.first + dirs[dir][0];
-                int nc = coord.second + dirs[dir][1];
-                int next = board[nr][nc];
-                if (next > 0 && next % 2 != 0) next -= 1;
-                if (next > 0 && next != idx) {
-                    // 겹치는 애 재귀적으로 먼저 탐색
-                    nexts.insert(next);
+    while (!knights.empty())
+    {
+        auto ind = knights.front();
+        knights.pop();
+
+        vector<pair<int, int>> search = getSearchRange(ind, dir);
+
+        for (auto& next : search) {
+            int nr = next.R;
+            int nc = next.C;
+
+            if (isOut(nr, nc)) return hitted;
+
+            for (int i = 1; i <= N; i++) { // 나를 제외한 모든 기사 중 살아있는 애들
+                if (i != ind && health[i] > 0) {
+                    int candR = pos[i].R;
+                    int candC = pos[i].C;
+                    int candW = width[i];
+                    int candH = height[i];
+
+                    if (candR <= nr && nr <= candR + candH - 1 && candC <= nc && nc <= candC + candW - 1) {
+                        // 겹침
+                        needMove[i] = true;
+                        knights.push(i);
+                    }
+
                 }
             }
-            for(auto next : nexts)
-                if (!chainReaction(knights, knights[reverseKey[next]].second, reverseKey, dir, L, next, depth+1)) return false;
-
-            // 연쇄반응이 모두 잘 일어났다면, 이제 내 상태 압데이트
-            for (auto& coord : coords) {
-                int nr = coord.first + dirs[dir][0];
-                int nc = coord.second + dirs[dir][1];
-                board[coord.first][coord.second] -= idx; // 덧칠만 지워줌
-                board[nr][nc] += idx; // 덧칠
-                coord.first = nr;
-                coord.second = nc;
-            }
-            if (depth > 0)
-                computeDamage(knights[reverseKey[idx]], idx);
         }
+    }
 
-        // 움직일 수 있을 땐, 참 반환
-        return true;
+    // 움직임이 필요한 애들 업데이트
+    for (int i = 1; i <= N; i++) {
+        if (needMove[i]) {
+            pos[i].R += dirs[dir][0];
+            pos[i].C += dirs[dir][1];
+            hitted.push_back(i);
+        }
+    }
+
+    return hitted;
+}
+
+void getDamage(int attacker, vector<int>& hitted) {
+    for (auto& ind : hitted) {
+        if (ind != attacker && health[ind] > 0) { // 내가 아니고, 살아있는 애들
+            int cr = pos[ind].R;
+            int cc = pos[ind].C;
+
+            for (int r = cr; r <= cr + height[ind] - 1; r++) {
+                for (int c = cc; c <= cc + width[ind] - 1; c++) {
+                    if (board[r][c] == 1) { // 함정이면
+                        health[ind] = max(0, health[ind] - 1);
+                    }
+                }
+            }
+        }
     }
 }
 
-void solve() {
-    // 여기에 코드를 작성해주세요.
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-
-    // L : 판 길이, N : 기사 개수, Q : 명령 개수
-    int L, N, Q;
+int solve() {
     cin >> L >> N >> Q;
 
-    // 체스판 정보
-    for (int i = 1; i < L + 1; i++) {
-        for (int j = 1; j < L + 1; j++) {
-            int el;
-            cin >> el;
-            board[i][j] = el; // 0 - 빈칸, 1 - 함정, 2 - 벽
+    for (int i = 1; i <= L; i++) {
+        for (int j = 1; j <= L; j++) {
+            cin >> board[i][j];
         }
     }
-
-    // 초기 기사 정보
-    // 기사 : {체력 ,  [{x,y}]}
-    vector<pair<int, vector<pair<int, int>>>> knights;
-    vector<pair<int, int>> profiles;
-    unordered_map<int, int> reverseKey;
-    profiles.resize(N + 1);
-    knights.resize(N + 1);
-
-    int knightInd = 4;
 
     for (int i = 1; i <= N; i++) {
-        int r, c, h, w, k; // 행, 열, 방패 높이, 방패 넓이, 체력
-        cin >> r >> c >> h >> w >> k;
-
-        pair<int, vector<pair<int, int>>> knight;
-
-        knight.first = k;
-        for (int row = r; row < r + h; row++) {
-            for (int col = c; col < c + w; col++) {
-                board[row][col] += knightInd; // 4 이상의 숫자인 기사의 번호로 덧칠
-                knight.second.push_back({ row, col });
-            }
-        }
-
-        profiles[i] = { knightInd, k };
-        knights[i] = knight;
-        reverseKey[knightInd] = i;
-
-        // 인덱스 증가
-        knightInd *= 2;
+        cin >> pos[i].R >> pos[i].C >> height[i] >> width[i] >> health[i];
+        orig[i] = health[i]; // 점수 계산 용으로 원래 체력 기억
     }
 
-    // 명령
-    for (int i = 0; i < Q; i++) {
-        // idx는 이미 죽은 기사의 인덱스가 주어질 수 있다.
-        // dir : 0 - 상 / 1 - 우 / 2 - 하 / 3 - 좌
-        int idx, dir; // 기사 인덱스, 이동 방향
+    while (Q-- > 0) {
+        // 이미 사라진 기사의 번호가 주어질 수 있다.
+        int idx, dir;
         cin >> idx >> dir;
 
-        auto& cur = knights[idx];
-        auto& health = cur.first;
-        if (health <= 0) continue; // 이미 죽은 기사
+        if (health[idx] == 0) continue;
 
-        auto& coords = cur.second;
-        int knightNum = profiles[idx].first;
-        chainReaction(knights, coords, reverseKey, dir, L, knightNum);
+        auto hitted = move(idx, dir);
+        if (hitted.empty()) continue; // 움직이지 않았음.
+        getDamage(idx, hitted);
     }
 
-    // 결과 출력
-    int res = 0;
+    // 총 받은 대미지 합 출력
+    int total = 0;
     for (int i = 1; i <= N; i++) {
-        if (knights[i].first > 0) {
-            res += profiles[i].second - knights[i].first;
-        }
+        if (health[i] == 0) continue;
+        total += orig[i] - health[i];
     }
-    cout << res << "\n";
+
+    cout << total;
+
+    return 0;
 }

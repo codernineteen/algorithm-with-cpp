@@ -66,3 +66,12 @@
 - 주사위 굴리기
 	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/cube-rounding-again/description?page=1&pageSize=20)
 	- [풀이](./samsung-sw/dice-roll.h)
+- 왕실의 기사 대결
+	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/royal-knight-duel/description?page=1&pageSize=20)
+	- [풀이](./samsung-sw/knights_fight.h)
+- 메이즈러너
+	- [문제](https://www.codetree.ai/training-field/frequent-problems/problems/maze-runner/description?page=1&pageSize=20)
+	- [풀이](./samsung-sw/mazerunner.h)
+- 보물상자 비밀번호
+	- [문제](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo&categoryId=AWXRUN9KfZ8DFAUo&categoryType=CODE&problemTitle=%EB%AA%A8%EC%9D%98&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+	- [풀이](./samsung-sw/box-password.h)

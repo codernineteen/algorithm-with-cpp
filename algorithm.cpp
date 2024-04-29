@@ -1,5 +1,4 @@
-#include "samsung-sw/bbang.h"
-
+#include "samsung-sw/cell-reproduce.h"
 int main()
 {
     solve();

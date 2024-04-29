@@ -40,6 +40,9 @@
 - 1931 회의실 배정
 	- [문제](https://www.acmicpc.net/problem/1931)
 	- [풀이](./baekjoon/boj-1931.h)
+- 1003 피보나치 함수
+	- [문제](https://www.acmicpc.net/problem/1003)
+	- [풀이](./baekjoon/boj-1003.h)
 	
 ### Gold
 

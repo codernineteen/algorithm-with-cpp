@@ -145,8 +145,17 @@
     <ClInclude Include="baekjoon\boj-9095.h" />
     <ClInclude Include="programmers\pick-item.h" />
     <ClInclude Include="samsung-sw\bbang.h" />
+    <ClInclude Include="samsung-sw\box-password.h" />
+    <ClInclude Include="samsung-sw\cell-reproduce.h" />
+    <ClInclude Include="samsung-sw\dice-roll.h" />
+    <ClInclude Include="samsung-sw\fight_island.h" />
+    <ClInclude Include="samsung-sw\grab-tail.h" />
     <ClInclude Include="samsung-sw\knights_fight.h" />
+    <ClInclude Include="samsung-sw\mazerunner.h" />
+    <ClInclude Include="samsung-sw\pacman.h" />
     <ClInclude Include="samsung-sw\potop.h" />
+    <ClInclude Include="samsung-sw\rudol.h" />
+    <ClInclude Include="samsung-sw\soolae.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

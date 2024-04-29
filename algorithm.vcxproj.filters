@@ -65,5 +65,32 @@
     <ClInclude Include="samsung-sw\bbang.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="samsung-sw\fight_island.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\soolae.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\rudol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\grab-tail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\pacman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\dice-roll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\mazerunner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\box-password.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="samsung-sw\cell-reproduce.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

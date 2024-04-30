@@ -137,9 +137,11 @@
     <ClInclude Include="baekjoon\boj-11568.h" />
     <ClInclude Include="baekjoon\boj-1158.h" />
     <ClInclude Include="baekjoon\boj-11726.h" />
+    <ClInclude Include="baekjoon\boj-11727.h" />
     <ClInclude Include="baekjoon\boj-12852.h" />
     <ClInclude Include="baekjoon\boj-1923.h" />
     <ClInclude Include="baekjoon\boj-1926.h" />
+    <ClInclude Include="baekjoon\boj-1932.h" />
     <ClInclude Include="baekjoon\boj-2579.h" />
     <ClInclude Include="baekjoon\boj-2623.h" />
     <ClInclude Include="baekjoon\boj-9095.h" />

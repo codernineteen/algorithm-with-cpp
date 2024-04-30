@@ -43,6 +43,12 @@
 - 1003 피보나치 함수
 	- [문제](https://www.acmicpc.net/problem/1003)
 	- [풀이](./baekjoon/boj-1003.h)
+- 1932 정수 삼각형
+	- [문제](https://www.acmicpc.net/problem/1932)
+	- [풀이](./baekjoon/boj-1932.h)
+- 2xn 타일링2
+	- [문제](https://www.acmicpc.net/problem/11727)
+	- [풀이](./baekjoon/boj-11727.h)
 	
 ### Gold
 

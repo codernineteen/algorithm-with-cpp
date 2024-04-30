@@ -92,5 +92,11 @@
     <ClInclude Include="samsung-sw\cell-reproduce.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="baekjoon\boj-1932.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="baekjoon\boj-11727.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

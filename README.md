@@ -52,6 +52,9 @@
 - 이친수 
 	- [문제](https://www.acmicpc.net/problem/2193)
 	- [풀이](./baekjoon/boj-2193.h)
+- 연속합
+	- [문제](https://www.acmicpc.net/problem/1912)
+	- [풀이](./baekjoon/boj-1912.h)
 	
 ### Gold
 

@@ -49,6 +49,9 @@
 - 2xn 타일링2
 	- [문제](https://www.acmicpc.net/problem/11727)
 	- [풀이](./baekjoon/boj-11727.h)
+- 이친수 
+	- [문제](https://www.acmicpc.net/problem/2193)
+	- [풀이](./baekjoon/boj-2193.h)
 	
 ### Gold
 

@@ -1,4 +1,4 @@
-#include "samsung-sw/cell-reproduce.h"
+#include "baekjoon/boj-10844.h"
 int main()
 {
     solve();

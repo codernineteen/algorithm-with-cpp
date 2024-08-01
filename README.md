@@ -55,6 +55,9 @@
 - 연속합
 	- [문제](https://www.acmicpc.net/problem/1912)
 	- [풀이](./baekjoon/boj-1912.h)
+- 10844번 쉬운 계단 수
+	- [문제](https://www.acmicpc.net/problem/10844)
+	- [풀이](./baekjoon/boj-10844.h)
 	
 ### Gold
 

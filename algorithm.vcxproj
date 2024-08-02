@@ -149,6 +149,7 @@
     <ClInclude Include="baekjoon\boj-2579.h" />
     <ClInclude Include="baekjoon\boj-2623.h" />
     <ClInclude Include="baekjoon\boj-9095.h" />
+    <ClInclude Include="baekjoon\boj-9251.h" />
     <ClInclude Include="programmers\pick-item.h" />
     <ClInclude Include="samsung-sw\bbang.h" />
     <ClInclude Include="samsung-sw\box-password.h" />

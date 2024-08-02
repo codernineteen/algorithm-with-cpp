@@ -61,6 +61,10 @@
 	
 ### Gold
 
+- 9251번 LCS
+	- [문제](https://www.acmicpc.net/problem/9251)
+	- [풀이](./baekjoon/boj-9251.h)
+
 ## Samsung SW Test
 
 - 포탑부수기

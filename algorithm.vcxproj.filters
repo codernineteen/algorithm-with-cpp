@@ -110,5 +110,8 @@
     <ClInclude Include="baekjoon\boj-10844.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="baekjoon\boj-9251.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

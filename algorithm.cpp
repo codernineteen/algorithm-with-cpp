@@ -1,4 +1,4 @@
-#include "baekjoon/boj-10942.h"
+#include "baekjoon/boj-2011.h"
 int main()
 {
     solve();

@@ -67,6 +67,9 @@
 - 10942번 팰린드롬?
 	- [문제](https://www.acmicpc.net/problem/10942)
 	- [풀이](./baekjoon/boj-10942.h)
+- 2021번 암호코드
+	- [문제](https://www.acmicpc.net/problem/2021)
+	- [풀이](./baekjoon/boj-2021.h)
 
 ## Samsung SW Test
 

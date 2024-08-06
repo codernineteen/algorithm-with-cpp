@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baekjoon\boj-10844.h" />
+    <ClInclude Include="baekjoon\boj-10942.h" />
     <ClInclude Include="baekjoon\boj-1202.h" />
     <ClInclude Include="baekjoon\boj-1912.h" />
     <ClInclude Include="baekjoon\boj-2193.h" />

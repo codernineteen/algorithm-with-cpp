@@ -64,6 +64,9 @@
 - 9251번 LCS
 	- [문제](https://www.acmicpc.net/problem/9251)
 	- [풀이](./baekjoon/boj-9251.h)
+- 10942번 팰린드롬?
+	- [문제](https://www.acmicpc.net/problem/10942)
+	- [풀이](./baekjoon/boj-10942.h)
 
 ## Samsung SW Test
 

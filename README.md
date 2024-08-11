@@ -70,6 +70,9 @@
 - 2021번 암호코드
 	- [문제](https://www.acmicpc.net/problem/2021)
 	- [풀이](./baekjoon/boj-2021.h)
+- 1915번 가장 큰 정사각형
+	- [문제](https://www.acmicpc.net/problem/1915)
+	- [풀이](./baekjoon/boj-1915.h)
 
 ## Samsung SW Test
 

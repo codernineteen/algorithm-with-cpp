@@ -136,6 +136,7 @@
     <ClInclude Include="baekjoon\boj-10942.h" />
     <ClInclude Include="baekjoon\boj-1202.h" />
     <ClInclude Include="baekjoon\boj-1912.h" />
+    <ClInclude Include="baekjoon\boj-1915.h" />
     <ClInclude Include="baekjoon\boj-2011.h" />
     <ClInclude Include="baekjoon\boj-2193.h" />
     <ClInclude Include="baekjoon\boj-11047.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="baekjoon\boj-2623.h" />
     <ClInclude Include="baekjoon\boj-9095.h" />
     <ClInclude Include="baekjoon\boj-9251.h" />
+    <ClInclude Include="baekjoon\boj-9655.h" />
     <ClInclude Include="programmers\pick-item.h" />
     <ClInclude Include="samsung-sw\bbang.h" />
     <ClInclude Include="samsung-sw\box-password.h" />
